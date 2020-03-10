@@ -120,7 +120,7 @@ def train_and_evaluate(args):
         callbacks=[lr_decay_cb, tensorboard_cb])
 
     export_path = os.path.join(args.job_dir, 'keras_export')
-    tf.keras.experimental.export_saved_model(keras_model, export_path)
+    tf.keras.models.save_model(keras_model, export_path)
     print('Model exported to: {}'.format(export_path))
 
 
